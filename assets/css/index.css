@@ -20,21 +20,26 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
 }
 
 /* Styles pour le sidebar */
 .sidebar {
     position: fixed;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 60px;
-    background-color: var(--primary-color);
+    top: 50%;
+    left: 35px;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Pour s'assurer que la sidebar reste au-dessus du contenu */
 }
 
 .sidebar a {
@@ -51,14 +56,19 @@ body {
 
 /* Styles pour le main content */
 main {
-    margin-left: 60px;
     padding: 20px;
     max-width: 1200px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto; /* Pour centrer le contenu principal */
 }
 
 section {
     margin-bottom: 40px;
+    width: 100%;
+    max-width: 600px;
 }
 
 section h1, section h2, section h3 {
@@ -101,16 +111,8 @@ section h1, section h2, section h3 {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .sidebar {
-        width: 100%;
-        height: auto;
-        flex-direction: row;
-        justify-content: space-around;
-        position: static;
-    }
 
     main {
-        margin-left: 0;
         padding: 10px;
     }
 }
