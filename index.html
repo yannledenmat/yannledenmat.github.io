@@ -8,36 +8,48 @@
     <script defer src="./assets/js/index.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Mon Nom</h1>
-        <nav>
+    <aside class="sidebar">
+        <a href="https://github.com/ton-github" target="_blank"><img src="/Portfolio/assets/images/icons-github.svg" alt="GitHub"></a>
+        <a href="https://linkedin.com/in/ton-linkedin" target="_blank"><img src="/Portfolio/assets/images/icons-linkedin.svg" alt="LinkedIn"></a>
+    </aside>
+
+    <main>
+        <section id="intro">
+            <h1>Mon Nom</h1>
+            <p>Petit texte de présentation sur moi et ce que je fais.</p>
+        </section>
+
+        <section id="skills">
+            <h2>Mes Compétences</h2>
             <ul>
-                <li><a href="#about">À Propos</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li>HTML/CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Python</li>
+                <li>SQL</li>
+                <li>Git</li>
             </ul>
-        </nav>
-    </header>
+        </section>
 
-    <section id="about">
-        <h2>À Propos</h2>
-        <p>Présentation de moi-même et de mes compétences.</p>
-    </section>
+        <section id="project">
+            <h2>Mon Projet</h2>
+            <h3>Nom du Projet</h3>
+            <p>Description du projet que j'ai réalisé.</p>
+            <ul>
+                <li>Compétence 1</li>
+                <li>Compétence 2</li>
+                <li>Compétence 3</li>
+                <li>Compétence 4</li>
+                <li>Compétence 5</li>
+                <li>Compétence 6</li>
+            </ul>
+        </section>
 
-    <section id="portfolio">
-        <h2>Portfolio</h2>
-        <div class="project">
-            <h3>Projet 1</h3>
-            <p>Description du projet 1.</p>
-        </div>
-        <div class="project">
-            <h3>Projet 2</h3>
-            <p>Description du projet 2.</p>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Yann Le Denmat. Tous droits réservés.</p>
-    </footer>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:ton-email@example.com">ton-email@example.com</a></p>
+            <a href="path/to/your/cv.pdf" download>Télécharger mon CV</a>
+        </section>
+    </main>
 </body>
 </html>
