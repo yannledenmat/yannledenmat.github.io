@@ -24,7 +24,8 @@ function goToPrevSlide() {
 }
 
 function updateCarousel() {
-    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    const slideWidth = slides.children[0].offsetWidth;
+    slides.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
 
     indicators.forEach(indicator => indicator.classList.remove('active'));
     indicators[currentIndex].classList.add('active');
@@ -42,3 +43,7 @@ indicators.forEach((indicator, index) => {
 });
 
 updateCarousel();
+
+window.addEventListener('resize', () => {
+    updateCarousel(); // Recalcule la position des diapositives sur redimensionnement
+});
