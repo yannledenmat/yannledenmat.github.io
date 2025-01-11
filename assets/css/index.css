@@ -32,6 +32,7 @@ body {
     align-items: center;
     flex-direction: column;
     text-align: center;
+    width: 100%;
     min-height: 100vh;
     margin: 0;
 }
@@ -184,7 +185,7 @@ section div {
 }
 
 .skill img {
-    width: 24px; /* Taille du logo */
+    width: 24px;
     height: 24px;
 }
 
@@ -562,6 +563,10 @@ footer hr {
         --slider-height: 250px; /* Ajustement pour les très petits écrans */
     }
 
+    .about-me {        
+        margin: 15px;
+    }
+
     .slider {
         height: var(--slider-height);
     }
@@ -583,12 +588,17 @@ footer hr {
 
 @media (max-width: 360px) {
 
-    .about-me {        
-        margin: 15px;
+
+    .presentation-box h2 {
+        font-size: 0.8em;
     }
 
-    .about-me h2 {
-        font-size: 0.8em;
+    .skill{
+        padding: 5px 10px;
+    }
+
+    .skill span {  
+        font-size: 0.6em;
     }
 
     #intro svg {
