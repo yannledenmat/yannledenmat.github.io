@@ -4,7 +4,10 @@
     --secondary-color: #D1D1D1;
     --background-color: #FFFFFF;
     --text-color: #333333;
-    --font-family: 'Arial', sans-serif;
+    --text-color-light: #777777;
+    --font-family: 'Roboto', sans-serif;
+    --font-heading: 'Poppins', sans-serif;
+    --transition-speed: 0.3s;
 }
 
 /* Réinitialisation des styles par défaut */
@@ -12,8 +15,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: all var(--transition-speed) ease;
 }
 
+/* Corps de la page */
 body {
     font-family: var(--font-family);
     background-color: var(--background-color);
@@ -24,141 +29,256 @@ body {
     align-items: center;
     flex-direction: column;
     text-align: center;
+    min-height: 100vh;
+    margin: 0;
 }
 
 /* Styles pour le sidebar */
 .sidebar {
     position: fixed;
     top: 50%;
-    left: 35px;
-    transform: translate(-50%, -50%);
+    left: 15px;
+    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    z-index: 1000; /* Pour s'assurer que la sidebar reste au-dessus du contenu */
+    gap: 20px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
 }
 
 .sidebar a {
     display: block;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
 }
 
 .sidebar img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
-/* Styles pour le main content */
+.sidebar a:hover img {
+    transform: scale(1.1);
+}
+
+/* Styles pour le contenu principal */
 main {
-    padding: 20px;
+    padding: 40px 20px;
     max-width: 1200px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 auto; /* Pour centrer le contenu principal */
+    margin: 0 auto;
+    text-align: left;
 }
 
 section {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
 }
 
 section h1, section h2, section h3 {
     margin-bottom: 20px;
-    border-bottom: 2px solid var(--secondary-color);
-    padding-bottom: 10px;
+    font-family: var(--font-heading);
+    font-size: 2em;
+    color: var(--primary-color);
+    letter-spacing: 1px;
 }
 
-#intro p {
+section p {
     font-size: 1.2em;
+    color: var(--text-color-light);
 }
 
+/* Liste de compétences et projets */
 #skills ul, #project ul {
     list-style: none;
     padding: 0;
 }
 
 #skills ul li, #project ul li {
-    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 1.1em;
+    color: var(--text-color);
+    position: relative;
+    padding-left: 25px;
+}
+
+#skills ul li::before, #project ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+}
+
+/* Nouveau style pour la section Contact */
+#contact {
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-family: var(--font-heading);
 }
 
 #contact p {
-    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: var(--text-color);
+    margin-bottom: 25px;
+}
+
+#contact .email {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+#contact .email:hover {
+    background-color: #1C86EE;
+    transform: translateY(-3px);
+}
+
+#contact .cv-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: #444;
+    color: var(--background-color);
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#contact .cv-button:hover {
+    background-color: #666;
+    transform: translateY(-3px);
 }
 
 #contact a {
     display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
+    margin-top: 15px;
+    padding: 12px 25px;
     background-color: var(--primary-color);
     color: var(--background-color);
     text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+    border-radius: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 #contact a:hover {
     background-color: #1C86EE;
+    transform: translateY(-3px);
 }
 
 /* Styles pour le footer */
 footer {
     background-color: #1a1a1a;
     color: #ffffff;
-    padding: 20px 0;
+    padding: 40px 20px;
     display: flex;
     flex-direction: column;
     width: 100%;
     margin: 0 auto;
+    text-align: center;
 }
 
-footer hr{
-    width: 60%;
-    margin: 20px auto ;
-    opacity: 50%;
+footer hr {
+    width: 80%;
+    margin: 30px auto;
+    opacity: 0.3;
 }
-
 
 .footer-section {
     flex: 1;
-    text-align: center;
+    margin-bottom: 20px;
 }
 
 .footer-section h2, .footer-section h3 {
     margin-bottom: 10px;
+    font-size: 1.4em;
+    font-family: var(--font-heading);
 }
 
 .footer-section p {
-    font-size: 0.9em;
+    font-size: 1em;
+    color: var(--text-color-light);
 }
 
 .social a {
     display: inline-block;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 .social img {
-    width: 24px;
-    height: 24px;
-    filter: invert(1); /* Pour inverser les couleurs des icônes */
+    width: 30px;
+    height: 30px;
+    filter: invert(1);
+    transition: transform 0.2s ease;
+}
+
+.social img:hover {
+    transform: scale(1.1);
 }
 
 .copyright p {
-    font-size: 0.8em;
+    font-size: 0.85em;
+    margin-top: 20px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-
     main {
-        padding: 10px;
+        padding: 20px;
+    }
+
+    section h1, section h2, section h3 {
+        font-size: 1.6em;
+    }
+
+    #skills ul li, #project ul li {
+        font-size: 1em;
+    }
+
+    #contact a {
+        padding: 10px 20px;
+    }
+
+    .footer-section {
+        text-align: center;
     }
 }
