@@ -5,7 +5,7 @@
     --background-color: #FFFFFF;
     --text-color: #333333;
     --text-color-light: #777777;
-    --font-family: 'Roboto', sans-serif;
+    --font-family: 'Comfortaa', sans-serif;
     --font-heading: 'Poppins', sans-serif;
     --transition-speed: 0.3s;
 }
@@ -235,6 +235,7 @@ footer {
 }
 
 .footer-left h2 {
+    font-family: var(--font-heading);
     font-size: 1.8em;
     margin-bottom: 10px;
 }
@@ -330,6 +331,20 @@ footer hr {
         flex-direction: column;
         align-items: center;
     }
+
+    .footer-top {
+        flex-direction: column;
+    }
+
+    .footer-left {
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    .footer-right {
+        text-align: center;
+    }
+
 }
 
 @media (max-width: 360px) {
