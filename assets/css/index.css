@@ -82,7 +82,6 @@ main {
 }
 
 section {
-    margin-bottom: 60px;
     width: 100%;
     max-width: 800px;
 }
@@ -114,11 +113,14 @@ section div {
     text-align: center;
  }
 
+ #intro p {
+    margin-bottom: 30px;
+ }
+
  .presentation-box {
     background: linear-gradient(to right, #8e2de2, #4a00e0); /* Dégradé violet vers bleu */
     color: white;
     padding: 30px;
-    margin-top: 20px;
     font-size: 1.2rem;
     width: 100%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -129,6 +131,13 @@ section div {
     margin:  0 30px;
     line-height: 1.6;
 }
+
+.svg-bureau {
+    max-width: 860px;
+    height: auto;
+}
+
+
 /* Liste de compétences et projets */
 #skills ul, #project ul {
     list-style: none;
@@ -157,12 +166,103 @@ section div {
     background-color: var(--primary-color);
 }
 
+/* Projet */
+
+#project {
+    display: flex;
+    flex-direction: column;
+}
+
+.slider {
+    width: var(--slider-width);
+    height: var(--slider-height);
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: calc(3 * var(--slider-width));
+}
+
+.slide {
+    min-width: var(--slider-width);
+    height: var(--slider-height);
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;     
+    max-width: 650px;
+    max-height: 550px;
+    object-fit: contain;
+    object-position: center;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 10px 15px;
+    z-index: 10;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #7b2fb9;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: #4f159b;
+}
+
+
+
+
+/* Contact*/
 #contact {
     background-color: #ebebeb;
     padding: 40px 20px;
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-    margin-top: 40px;
+    margin: 40px 0 60px 0;
     width: 100%;
     max-width: 800px;
     text-align: center;
@@ -325,95 +425,16 @@ footer hr {
     margin-top: 20px;
 }
 
-
-.slider {
-    width: var(--slider-width);
-    height: var(--slider-height);
-    overflow: hidden;
-    position: relative;
-    margin: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.slides {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: calc(3 * var(--slider-width));
-}
-
-.slide {
-    min-width: var(--slider-width);
-    height: var(--slider-height);
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;     
-    max-width: 650px;
-    max-height: 550px;
-    object-fit: contain;
-    object-position: center;
-}
-
-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: rgb(255, 255, 255);
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    padding: 10px 15px;
-    z-index: 10;
-    font-size: 18px;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-
-/* Indicateurs */
-.indicators {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.indicator {
-    width: 10px;
-    height: 10px;
-    background-color: #7b2fb9;
-    border-radius: 50%;
-    transition: background-color 0.3s;
-    cursor: pointer;
-}
-
-.indicator.active {
-    background-color: #4f159b;
-}
-
-
 @media (max-width: 1035px) {
 
  #intro svg {
     width: 550px;
     height: 450px;
  }
+ 
+ .svg-bureau {
+    max-width: 100%;
+}
 
  .sidebar {
     width: 50px;
