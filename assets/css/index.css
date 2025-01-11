@@ -98,6 +98,13 @@ section p {
     color: var(--text-color-light);
 }
 
+section div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
 /* Liste de compétences et projets */
 #skills ul, #project ul {
     list-style: none;
@@ -126,12 +133,11 @@ section p {
     background-color: var(--primary-color);
 }
 
-/* Nouveau style pour la section Contact */
 #contact {
-    background-color: #f4f4f4;
+    background-color: #ebebeb;
     padding: 40px 20px;
     border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
     margin-top: 40px;
     width: 100%;
     max-width: 800px;
@@ -169,21 +175,23 @@ section p {
 }
 
 #contact .cv-button {
-    display: inline-block;
+    display: flex;
+    width: fit-content;
     margin-top: 20px;
     padding: 12px 30px;
-    background-color: #444;
+    background-color: #7b2fb9;
     color: var(--background-color);
     text-decoration: none;
     border-radius: 30px;
-    font-size: 1.1em;
-    font-weight: 500;
     text-transform: uppercase;
     transition: background-color 0.3s, transform 0.3s;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 #contact .cv-button:hover {
-    background-color: #666;
+    background-color: #4f159b;
     transform: translateY(-3px);
 }
 
@@ -191,7 +199,7 @@ section p {
     display: inline-block;
     margin-top: 15px;
     padding: 12px 25px;
-    background-color: var(--primary-color);
+    background-color: #7b2fb9;
     color: var(--background-color);
     text-decoration: none;
     border-radius: 30px;
@@ -201,42 +209,74 @@ section p {
 }
 
 #contact a:hover {
-    background-color: #1C86EE;
+    background-color: #4f159b;
     transform: translateY(-3px);
 }
 
-/* Styles pour le footer */
+/* Footer */
 footer {
     background-color: #1a1a1a;
-    color: #ffffff;
-    padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
+    color: #fff;
+    padding: 20px;
     width: 100%;
-    margin: 0 auto;
     text-align: center;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.footer-left {
+    text-align: left;
+    flex: 1;
+}
+
+.footer-left h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.footer-left p {
+    font-size: 1em;
+    color: #D1D1D1;
+}
+
+.footer-right {
+    text-align: right;
+    flex: 1;
+}
+
+.footer-right h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.footer-right a {
+    margin: 0 10px;
+}
+
+.footer-right img {
+    width: 30px;
+    height: 30px;
+    filter: invert(1);
+    transition: transform 0.3s ease;
+}
+
+.footer-right a:hover img {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    margin-top: 20px;
 }
 
 footer hr {
     width: 80%;
-    margin: 30px auto;
+    margin: 20px auto;
     opacity: 0.3;
-}
-
-.footer-section {
-    flex: 1;
-    margin-bottom: 20px;
-}
-
-.footer-section h2, .footer-section h3 {
-    margin-bottom: 10px;
-    font-size: 1.4em;
-    font-family: var(--font-heading);
-}
-
-.footer-section p {
-    font-size: 1em;
-    color: var(--text-color-light);
 }
 
 .social a {
@@ -280,5 +320,24 @@ footer hr {
 
     .footer-section {
         text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+
+    section div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 360px) {
+
+    section div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.8em;
     }
 }
