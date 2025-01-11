@@ -1,41 +1,44 @@
+const prevButton = document.querySelector('.prev');
+const nextButton = document.querySelector('.next');
 const slides = document.querySelector('.slides');
-const slideCount = document.querySelectorAll('.slide').length;
 const indicators = document.querySelectorAll('.indicator');
 let currentIndex = 0;
 
-document.querySelector('.next').addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % slideCount;
-    updateSlider();
-});
 
-document.querySelector('.prev').addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-    updateSlider();
-});
+function goToNextSlide() {
+    if (currentIndex < slides.children.length - 1) {
+        currentIndex++;
+    } else {
+        currentIndex = 0;
+    }
+    updateCarousel();
+}
+
+function goToPrevSlide() {
+    if (currentIndex > 0) {
+        currentIndex--;
+    } else {
+        currentIndex = slides.children.length - 1; 
+    }
+    updateCarousel();
+}
+
+function updateCarousel() {
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    indicators.forEach(indicator => indicator.classList.remove('active'));
+    indicators[currentIndex].classList.add('active');
+}
+
+nextButton.addEventListener('click', goToNextSlide);
+
+prevButton.addEventListener('click', goToPrevSlide);
 
 indicators.forEach((indicator, index) => {
     indicator.addEventListener('click', () => {
         currentIndex = index;
-        updateSlider();
+        updateCarousel();
     });
 });
 
-function updateSlider() {
-    const offset = -currentIndex * 600;
-    slides.style.transform = `translateX(${offset}px)`;
-
-    indicators.forEach((indicator, index) => {
-        if (index === currentIndex) {
-            indicator.classList.add('active');
-        } else {
-            indicator.classList.remove('active');
-        }
-    });
-}
-
-let autoSlide = setInterval(() => {
-    currentIndex = (currentIndex + 1) % slideCount;
-    updateSlider();
-}, 8000); 
-
-updateSlider();
+updateCarousel();
