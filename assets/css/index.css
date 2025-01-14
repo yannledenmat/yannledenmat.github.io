@@ -200,6 +200,26 @@ section div {
 
 /* Projet */
 
+.descr-text{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.descr-text h2{
+    margin: 15px 50px;
+    align-self: self-start;
+}
+
+.descr-text p{
+    max-width: 650px;
+    margin: 15px 50px;
+}
+
+.project-descr{
+    max-width: 100%;
+}
+
 #project {
     display: flex;
     flex-direction: column;
@@ -208,14 +228,9 @@ section div {
     max-width: 100%;
 }
 
-#project h2{
+#project > h2{
     font-size: 2em;
     margin: 2em 0;
-}
-
-.project-descr p{
-    max-width: 650px;
-    margin-left: 40px;
 }
 
 .slider {
@@ -544,6 +559,14 @@ footer hr {
 
     .presentation-box {
         width: 110%;
+    }
+    
+    #project > h2{
+        margin: 20px 0;
+    }
+
+    .project-descr{
+        flex-direction: column;
     }
 }
 
