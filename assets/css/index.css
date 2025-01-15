@@ -200,7 +200,7 @@ section div {
 
 /* Projet */
 
-.descr-text{
+ .descr-text{
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -218,6 +218,7 @@ section div {
 
 .project-descr{
     max-width: 100%;
+    margin-bottom: 50px;
 }
 
 #project {
@@ -232,6 +233,44 @@ section div {
     font-size: 2em;
     margin: 2em 0;
 }
+
+.project-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    max-width: 80%;
+    width: 100%;
+    padding: 0 1em;
+}
+
+.project-item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid #eee;
+    padding: 1.2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.project-item .icon {
+    font-size: 2.5em;
+    margin-right: 1em;
+    color: #6A4CFF; /* Couleur violette */
+}
+
+.project-item p {
+    font-size: 1.1em;
+    color: #333;
+    margin: 0;
+}
+
 
 .slider {
     width: var(--slider-width);
@@ -406,6 +445,9 @@ footer {
     padding: 20px;
     width: 100%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .footer-top {
@@ -413,6 +455,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    width: 80%;
 }
 
 .footer-left {
@@ -485,6 +528,23 @@ footer hr {
 .copyright p {
     font-size: 0.85em;
     margin-top: 20px;
+}
+
+@media (max-width: 1200px) {
+    .project-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-item  .icon {
+        order: -1; /* Place l'icône au-dessus du texte */
+        margin-bottom: 10px; /* Espace entre l'icône et le texte */
+        margin-right: 0px;
+    }
+
+    .project-item p {
+        text-align: center;
+    }
 }
 
 @media (max-width: 1035px) {
@@ -567,6 +627,28 @@ footer hr {
 
     .project-descr{
         flex-direction: column;
+    }
+
+    .project-list {
+        display: grid;
+        grid-template-columns: 1fr; /* Une seule colonne */
+        gap: 1em;
+    }
+
+    .project-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .icon {
+        order: -1;
+        margin-bottom: 10px;
+    }
+
+    .project-item p {
+        text-align: center;
     }
 }
 
