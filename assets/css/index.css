@@ -262,7 +262,7 @@ section div {
 .project-item .icon {
     font-size: 2.5em;
     margin-right: 1em;
-    color: #6A4CFF; /* Couleur violette */
+    color: #6A4CFF;
 }
 
 .project-item p {
@@ -537,8 +537,8 @@ footer hr {
     }
 
     .project-item  .icon {
-        order: -1; /* Place l'icône au-dessus du texte */
-        margin-bottom: 10px; /* Espace entre l'icône et le texte */
+        order: -1;
+        margin-bottom: 10px;
         margin-right: 0px;
     }
 
@@ -631,7 +631,7 @@ footer hr {
 
     .project-list {
         display: grid;
-        grid-template-columns: 1fr; /* Une seule colonne */
+        grid-template-columns: 1fr;
         gap: 1em;
     }
 
@@ -640,11 +640,6 @@ footer hr {
         flex-direction: column;
         align-items: center;
         text-align: center;
-    }
-
-    .icon {
-        order: -1;
-        margin-bottom: 10px;
     }
 
     .project-item p {
